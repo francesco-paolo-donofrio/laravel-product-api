@@ -20,6 +20,7 @@ class ProductSeeder extends Seeder
                 'name' => $faker->word(),
                 'description' => $faker->sentence(),
                 'price' => $faker->randomFloat(2, 10, 100), // Price between 10 and 100
+                'category_id' => $faker->numberBetween(1, 5),
             ]);
         }
     }
