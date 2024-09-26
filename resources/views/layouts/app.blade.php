@@ -22,6 +22,7 @@
 <body>
     <div id="app">
 
+    <p>Ciao io sono Francesco</p>
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
