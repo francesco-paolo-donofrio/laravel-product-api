@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
@@ -20,5 +19,8 @@ class CategorySeeder extends Seeder
             ['name' => 'Books'],
             ['name' => 'Sports'],
         ];
+
+        // Insert the categories into the 'categories' table
+        DB::table('categories')->insert($categories);
     }
 }
