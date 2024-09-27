@@ -68,7 +68,17 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        
+        $products = Product::find($id);
+        if (!$products) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Product not found'
+            ], 404);
+        }
+        return response()->json([
+            'success' => true,
+            'results' => $products
+        ]);
     }
 
     /**
