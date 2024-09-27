@@ -47,9 +47,16 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(int $id)
     {
         $products = Product::find($id);
+
+        if (!$products) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Product not found'
+            ], 404);
+        }
         return response()->json([
             'success' => true,
             'results' => $products
@@ -61,7 +68,7 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**
