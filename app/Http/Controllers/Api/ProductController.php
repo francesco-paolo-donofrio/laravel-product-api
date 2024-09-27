@@ -49,7 +49,11 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $products = Product::find($id);
+        return response()->json([
+            'success' => true,
+            'results' => $products
+        ]);
     }
 
     /**
